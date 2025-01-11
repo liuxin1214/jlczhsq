@@ -1,4 +1,6 @@
+import Swiper from "../js/swiper.min";
 let rootVM;
+
 rootVM = new Vue({
     el: '#root',
     data: {
@@ -41,25 +43,25 @@ rootVM = new Vue({
         ],
         hotactList: [
             {
-                img:'../images/jlczhsq/2a5d18674b342e917a9dad50d233fb66.png',
+                img:'./images/jlczhsq/2a5d18674b342e917a9dad50d233fb66.png',
                 disabled:false,
                 url:'www.jlczhsq.top',
                 text:'电单车充电'
             },
             {
-                img:'../images/jlczhsq/89c5eaf8fa3d9fb608d5006e6dc6885a.gif',
+                img:'./images/jlczhsq/89c5eaf8fa3d9fb608d5006e6dc6885a.gif',
                 disabled:false,
                 url:'www.jlczhsq.top',
                 text:'充值有礼'
             },
             {
-                img:'../images/jlczhsq/aed5ca324b0f73e05e2aa188fafb76fd.png',
+                img:'./images/jlczhsq/aed5ca324b0f73e05e2aa188fafb76fd.png',
                 disabled:false,
                 url:'www.jlczhsq.top',
                 text:'领优惠券'
             },
             {
-                img:'../images/jlczhsq/972bab7468f8fb99b258b06af2c3c00b.png',
+                img:'./images/jlczhsq/972bab7468f8fb99b258b06af2c3c00b.png',
                 disabled:false,
                 url:'www.jlczhsq.top',
                 text:'收藏站点'
@@ -68,17 +70,17 @@ rootVM = new Vue({
         bannerList: [
             {
                 "actUrl": "www.jlczhsq.top",
-                "logo": "../images/jlczhsq/d97663418524aa3900ba84687b30d84a.jpg",
+                "logo": "./images/jlczhsq/d97663418524aa3900ba84687b30d84a.jpg",
                 "img": null,
             },
             {
                 "actUrl": "www.jlczhsq.top",
-                "logo": "../images/jlczhsq/ea8f0598dc8610aa24dd26ab8a235aab.jpg",
+                "logo": "./images/jlczhsq/ea8f0598dc8610aa24dd26ab8a235aab.jpg",
                 "img": null,
             },
             {
                 "actUrl": "www.jlczhsq.top",
-                "logo": "../images/jlczhsq/ba608c012c27d1e77cd010498557c267.png",
+                "logo": "./images/jlczhsq/ba608c012c27d1e77cd010498557c267.png",
                 "img": null,
             }
         ],
@@ -270,7 +272,7 @@ rootVM = new Vue({
         iflogin: false,
         countPage: 1,
         percentShow: false,
-        imgselect: '../images/younger/btns1.png',
+        imgselect: './images/younger/btns1.png',
         phoneError: '',
         imgCodeError: '',
         smsCodeError: '',
@@ -285,6 +287,54 @@ rootVM = new Vue({
         pageGuidePopThree: false,
         pageGuidePopFour: false,
     },
+    filters: {
+    },
+    methods: {
+        topbannerswiper(item, e) {
+            let that = this;
+            let mySwiper5 = new Swiper('.swiper-container', {
+
+                speed: 1000,
+                autoplay: 3200,
+                loopFillGroupWithBlank: true,
+                disableOnInteraction: false,
+                autoplayDisableOnInteraction: false,
+                loop: true,
+                pagination: '.swiper-pagination',
+                onSlideChangeStart: function (e) {
+                    that.bannerIndex = e.realIndex
+                },
+                onSlideChangeEnd: function (e) {
+                    that.bannerIndex = e.realIndex
+                },
+            });
+        },
+        goodsadswiper(item, e) {
+            let that = this;
+            let mySwiper5 = new Swiper('.swiper-containerad', {
+
+                speed: 1000,
+                autoplay: 3200,
+                loopFillGroupWithBlank: true,
+                disableOnInteraction: false,
+                autoplayDisableOnInteraction: false,
+                loop: true,
+                onSlideChangeStart: function (e) {
+                    that.bannerIndex = e.realIndex
+                },
+                onSlideChangeEnd: function (e) {
+                    that.bannerIndex = e.realIndex
+                },
+            });
+        },
+    },
+    created: function created() {
+
+    },
+    ready: function ready() {
+        this.topbannerswiper()
+        this.goodsadswiper();
+    }
 });
 
 
