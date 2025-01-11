@@ -1,4 +1,4 @@
-import Swiper from "../js/swiper.min";
+// import Swiper from "../js/swiper.min";
 let rootVM;
 
 rootVM = new Vue({
