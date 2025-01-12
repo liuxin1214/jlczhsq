@@ -7,7 +7,61 @@
 <link rel="stylesheet" href="./css/swiper.min.css">
 <link rel="stylesheet" type="text/css" href="./css/index.css?v=a20220801">
 <style>
-
+    footer{
+    padding-bottom: 0.9rem;
+    height: 3rem;
+    position: fixed ;
+    width: 100%;
+    bottom: -1rem;
+    z-index: 10;
+    background: #ffffff;
+    box-shadow: 0 -1px 10px -1px #dfdfdf;
+    left: 0;
+    .foot-box{
+        width: 100%;
+        display: block;
+        .menu-item-list {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+        position:absolute;
+        bottom: 0;
+        a.focus{
+            .menu-title {
+            color: #ff8c0e;
+            }
+        }
+        .memu-item {
+            text-decoration: none;
+            flex: 1;
+            .menu-icon {
+            height: 1.5rem;
+            margin: 14px auto 10px;
+            position: relative;
+            .dots{
+                position: absolute;
+                font-size:15px;
+                width: 20px;
+                height: 20px;
+                border-radius:50%;
+                background: #ff0000;
+                color: #ffffff;
+                line-height: 20px;
+                text-align: center;
+                right:-10px;
+                top:-10px;
+            }
+            }
+            .menu-title {
+            font-size: 20px;
+            text-align: center;
+            color: #333;
+            }
+        }
+        }
+    }
+    }
     .search{
         width: 280px;
         height:45px;
@@ -24,13 +78,9 @@
         -webkit-user-select: none;
         -moz-user-select: none;
     }
-    .van-cell::after{
-        border: none !important;
-    }
 </style>
 
 <body style="background-color: #f8f8f8;padding-bottom: 4.5rem;" v-cloak>
-<div class="phoneboxme">
     <div class="search">
         <img style="width: 100%;border-radius: 100px;overflow: hidden;" src="./images/jlczhsq/hat.jpg" alt="">
     </div>
@@ -138,7 +188,7 @@
     <footer id="footer" style="min-height: 3rem;">
         <div class="foot-box">
             <img width="100%" src="./images/jlczhsq/onefooter.jpg" alt="">
-            <img style="position:absolute;bottom:1.5rem;left: 9.5rem;width: 4rem;border-radius: 50%;" src="./images/jlczhsq/saomiao.png" alt="">
+            <img style="position:absolute;top: -1.5rem;left: 9.5rem;width: 4rem;border-radius: 50%;" src="./images/jlczhsq/saomiao.png" alt="">
             <div style="height: 100%;width: 100%;" class="menu-item-list">
                 <a class="memu-item" href="./index.html"></a>
                 <a class="memu-item" href="javascript:;"></a>
@@ -147,7 +197,6 @@
             </div>
         </div>
     </footer>
-</div>
 
 <script type='text/javascript' src="./js/vue.min.js"></script>
 <script type='text/javascript' src="./js/swiper-5.4.5.min.js"> </script>
