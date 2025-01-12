@@ -56,7 +56,8 @@ let rootVM = new Vue({
                 {'Number':15,'text':'设备数量'},
                 {'Number':15,'text':'在线数量'},
                 {'Number':0,'text':'离线数量'}
-            ]
+            ],
+            imgready:false,
         }
     }
 });

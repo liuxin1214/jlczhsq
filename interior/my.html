@@ -94,35 +94,38 @@ a {
 </style>
 
 <body style="background-color: #f0f1f5;padding-bottom: 3.5rem;" v-cloak>
-    <div>
-      <div class="phone">
-        <p>13004451425</p>
-        <p style="color: #666;font-size: 0.95rem;">13004451425</p>
-      </div>
-      <div class="money">
-        <p>79412.81</p>
-        <p>302196.75</p>
-      </div>
-    </div>
-    <div>
-        <img style="width:100%" src="../images/jlczhsq/interiorMy.png" alt="">
-        <a href="./interior/index.html" style="width:100%;position:absolute;top:31.6rem;right: 1.4rem;display: flex;width: 4rem;height: 4rem;"></a>
-    </div>
-    <footer id="footer" style="min-height: 3rem;">
-        <div class="foot-box">
-            <img width="100%" src="../images/jlczhsq/6footer.jpg" alt="">
-            <div style="height: 100%;width: 100%;" class="menu-item-list">
-                <a class="memu-item" href="./index.html"></a>
-                <a class="memu-item" href="./car.html"></a>
-                <a class="memu-item" href="./order.html"></a>
-                <a class="memu-item" href="./my.html"></a>
+    <div v-show="imgready">
+        <div>
+            <div class="phone">
+              <p>13004451425</p>
+              <p style="color: #666;font-size: 0.95rem;">13004451425</p>
             </div>
-        </div>
-    </footer>
+            <div class="money">
+              <p>79412.81</p>
+              <p>302196.75</p>
+            </div>
+          </div>
+          <div>
+              <img style="width:100%" src="../images/jlczhsq/interiorMy.png" alt="">
+              <a href="./interior/index.html" style="width:100%;position:absolute;top:31.6rem;right: 1.4rem;display: flex;width: 4rem;height: 4rem;"></a>
+          </div>
+          <footer id="footer" style="min-height: 3rem;">
+              <div class="foot-box">
+                  <img width="100%" src="../images/jlczhsq/6footer.jpg" alt="">
+                  <div style="height: 100%;width: 100%;" class="menu-item-list">
+                      <a class="memu-item" href="./index.html"></a>
+                      <a class="memu-item" href="./car.html"></a>
+                      <a class="memu-item" href="./order.html"></a>
+                      <a class="memu-item" href="./my.html"></a>
+                  </div>
+              </div>
+          </footer>
+    </div>
 </body>
 
 </html>
 
+<script type='text/javascript' src="../js/vue.min.js"></script>
 <script>
   function adapter(){
     let w = document.documentElement.clientWidth;
@@ -132,5 +135,17 @@ a {
     document.documentElement.style.fontSize = w/750*32+"px";
   }
   adapter();
+  let rootVM = new Vue({
+    el: '#root',
+    data: {
+        imgready: false
+    }
+});
+
   window.onresize = adapter;
+  let img = new Image()
+  img.src = '../images/jlczhsq/interiorMy.png';
+  img.onload = function(){
+    rootVM.imgready = true;
+  };
 </script>

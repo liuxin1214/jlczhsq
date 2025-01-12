@@ -81,6 +81,7 @@ a {
 </style>
 
 <body style="background-color: #f8f8f8;padding-bottom: 4.5rem;" v-cloak>
+  <div v-show="imgready">
     <div>
       <div class="phone">
         <p>130****1425</p>
@@ -103,10 +104,12 @@ a {
             </div>
         </div>
     </footer>
+  </div>
+
 </body>
 
 </html>
-
+<script type='text/javascript' src="./js/vue.min.js"></script>
 <script>
   function adapter(){
     let w = document.documentElement.clientWidth;
@@ -117,4 +120,17 @@ a {
   }
   adapter();
   window.onresize = adapter;
+  let rootVM = new Vue({
+    el: '#root',
+    data: {
+        imgready: false
+    }
+});
+
+  window.onresize = adapter;
+  let img = new Image()
+  img.src = './images/jlczhsq/my.png';
+  img.onload = function(){
+    rootVM.imgready = true;
+  };
 </script>
