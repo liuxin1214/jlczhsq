@@ -17,6 +17,8 @@
     #extracHhistory{
         background: #FAFAFA;
         min-height: 100vh;
+    }
+    .user-view{
         padding: 10px;
         box-sizing: border-box;
     }
@@ -30,7 +32,11 @@
         justify-content: space-between;
         align-items: center;
         font-size: 18px;
-        padding: 10px 16px;
+        font-weight: 500;
+        padding: 10px 0;
+        margin: 0 auto;
+        width: calc(100% - 32px);
+        border-bottom: 1px solid #ebedf0;
     }
     .history-title{
         font-weight: bold;
@@ -39,35 +45,48 @@
     .history-text{
         color: #ED7F4B;
     }
+    .history-item .van-cell::after{
+        border-bottom:none;
+    }
+    .back-bar{
+        width: 100%;
+        background: #FFFFFF;
+        padding: 6px 0;
+    }
 </style>
 
 <body>
     <div id="extracHhistory" v-cloak>
-        <van-cell-group v-for="(item,index) in historyList" :key="index" class="history-item">
-            <div class="history-area-title">
-                <span style="font-size: 0.95rem;color: #444;">{{ `提现单号:${item.orderNo}` }}</span>
-                <span class="history-text" style="font-size: 0.9rem;">{{ statusConfig[item.status] }}</span>
-            </div>
-            <van-cell title="提现金额" >
-                <span class="history-text" >{{item.money}}</span>
-            </van-cell>
-            <van-cell title="手续费" >
-                <span class="history-text" >{{item.fee}}</span>
-            </van-cell>
-            <van-cell title="开户人"  >
-                <span class="history-text" >{{item.name}}</span>
-            </van-cell>
-            <van-cell title="银行卡号" >
-                <span class="history-text" >{{item.cardNo}}</span>
-            </van-cell>
-            <van-cell title="银行名称" >
-                <span class="history-text" >{{item.bankName}}</span>
-            </van-cell>
-            <van-cell title="联系电话" >
-                <span class="history-text" >{{item.phone}}</span>
-            </van-cell>
-            <van-cell title="提现时间" :value="item.time" ></van-cell>
-        </van-cell-group>
+        <div class="back-bar">
+            <van-icon name="arrow-left" @click="routerBack" size="24" ></van-icon>
+        </div>
+        <div class="user-view">
+            <van-cell-group v-for="(item,index) in historyList" :key="index" class="history-item">
+                <div class="history-area-title">
+                    <span >{{ `提现单号:${item.orderNo}` }}</span>
+                    <span class="history-text" >{{ statusConfig[item.status] }}</span>
+                </div>
+                <van-cell title="提现金额" >
+                    <span class="history-text" >{{item.money}}</span>
+                </van-cell>
+                <van-cell title="手续费" >
+                    <span class="history-text" >{{item.fee}}</span>
+                </van-cell>
+                <van-cell title="开户人"  >
+                    <span class="history-text" >{{item.name}}</span>
+                </van-cell>
+                <van-cell title="银行卡号" >
+                    <span class="history-text" >{{item.cardNo}}</span>
+                </van-cell>
+                <van-cell title="银行名称" >
+                    <span class="history-text" >{{item.bankName}}</span>
+                </van-cell>
+                <van-cell title="联系电话" >
+                    <span class="history-text" >{{item.phone}}</span>
+                </van-cell>
+                <van-cell title="提现时间" :value="item.time" ></van-cell>
+            </van-cell-group>
+        </div>
     </div>
 </body>
 
@@ -170,6 +189,11 @@
 
             ]
         },
+        methods:{
+            routerBack(){
+                window.history.back();
+            }
+        }
     });
 
 

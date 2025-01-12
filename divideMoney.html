@@ -19,9 +19,11 @@
   #divideMoney {
     background: #FAFAFA;
     min-height: 100vh;
+  }
+
+  .user-view {
     padding: 10px;
     box-sizing: border-box;
-    font-size: 0.9rem;
   }
 
   .divide-money-item {
@@ -32,33 +34,44 @@
     padding: 0 16px;
     box-sizing: border-box;
   }
+
   .divide-money-item-cell {
     line-height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #333;
+    color: #000000;
+  }
+  .back-bar {
+      width: 100%;
+      background: #FFFFFF;
+      padding: 6px 0;
   }
 </style>
 
 <body>
   <div id="divideMoney" v-cloak>
-    <div class="divide-money-item" v-for="(item,index) in divideMoneyList" :key="index">
-      <div class="divide-money-item-cell">
-        <span>参与分账金额</span>
-        <span>{{ item.target }}</span>
-      </div>
-      <div class="divide-money-item-cell">
-        <span>分账百分比</span>
-        <span>{{ item.percent }}</span>
-      </div>
-      <div class="divide-money-item-cell">
-        <span>获得分账</span>
-        <span>{{ item.receive }}</span>
-      </div>
-      <div class="divide-money-item-cell">
-        <span>时间</span>
-        <span>{{ item.time }}</span>
+    <div class="back-bar">
+      <van-icon name="arrow-left" @click="routerBack" size="24"></van-icon>
+    </div>
+    <div class="user-view">
+      <div class="divide-money-item" v-for="(item,index) in divideMoneyList" :key="index">
+        <div class="divide-money-item-cell">
+          <span>参与分账金额</span>
+          <span>{{ item.target }}</span>
+        </div>
+        <div class="divide-money-item-cell">
+          <span>分账百分比</span>
+          <span>{{ item.percent }}</span>
+        </div>
+        <div class="divide-money-item-cell">
+          <span>获得分账</span>
+          <span>{{ item.receive }}</span>
+        </div>
+        <div class="divide-money-item-cell">
+          <span>时间</span>
+          <span>{{ item.time }}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -126,8 +139,10 @@
 
     },
     methods: {
-
-    },
+      routerBack() {
+        window.history.back();
+      }
+    }
   });
 
 
