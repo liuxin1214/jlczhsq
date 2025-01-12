@@ -46,6 +46,17 @@ let rootVM = new Vue({
                     Number:"3519.58"
                 },
             ],
+            car:[
+                {'Number':302196.75,'text':'总收益(元)'},
+                {'Number':1579.75,'text':'今日充电(元)'},
+                {'Number':3471.97,'text':'今日用电(度)'},
+                {'Number':1076.31,'text':'今日电费'},
+                {'Number':2430.38,'text':'今日服务费'},
+                {'Number':56,'text':'今日充电人数'},
+                {'Number':15,'text':'设备数量'},
+                {'Number':15,'text':'在线数量'},
+                {'Number':0,'text':'离线数量'}
+            ]
         }
     }
 });
