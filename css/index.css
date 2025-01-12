@@ -80,71 +80,60 @@ input::-webkit-input-placeholder {
   color: #E85450 !important;
 }
 
-footer {
+footer{
   padding-bottom: 0.9rem;
-  height: 4.6rem;
-  position: fixed;
+  height: 3rem;
+  position: fixed ;
   width: 100%;
   bottom: -1rem;
   z-index: 10;
   background: #ffffff;
-  box-shadow: 0 -0.03125rem 0.3125rem -0.03125rem #dfdfdf;
+  box-shadow: 0 -1px 10px -1px #dfdfdf;
   left: 0;
-}
-
-footer .foot-box {
-  width: 100%;
-  display: block;
-}
-
-footer .foot-box .menu-item-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-footer .foot-box .menu-item-list a.focus .menu-title {
-  color: #ff8c0e;
-}
-
-footer .foot-box .menu-item-list .memu-item {
-  text-decoration: none;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
-
-footer .foot-box .menu-item-list .memu-item .menu-icon {
-  height: 1.5rem;
-  margin: 0.4375rem auto 0.3125rem;
-  position: relative;
-}
-
-footer .foot-box .menu-item-list .memu-item .menu-icon .dots {
-  position: absolute;
-  font-size: 0.46875rem;
-  width: 0.625rem;
-  height: 0.625rem;
-  border-radius: 50%;
-  background: #ff0000;
-  color: #ffffff;
-  line-height: 0.625rem;
-  text-align: center;
-  right: -0.3125rem;
-  top: -0.3125rem;
-}
-
-footer .foot-box .menu-item-list .memu-item .menu-title {
-  font-size: 0.625rem;
-  text-align: center;
-  color: #333;
+  .foot-box{
+    width: 100%;
+    display: block;
+    .menu-item-list {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: row;
+      position:absolute;
+      bottom: 0;
+      a.focus{
+        .menu-title {
+          color: #ff8c0e;
+        }
+      }
+      .memu-item {
+        text-decoration: none;
+        flex: 1;
+        .menu-icon {
+          height: 1.5rem;
+          margin: 14px auto 10px;
+          position: relative;
+          .dots{
+            position: absolute;
+            font-size:15px;
+            width: 20px;
+            height: 20px;
+            border-radius:50%;
+            background: #ff0000;
+            color: #ffffff;
+            line-height: 20px;
+            text-align: center;
+            right:-10px;
+            top:-10px;
+          }
+        }
+        .menu-title {
+          font-size: 20px;
+          text-align: center;
+          color: #333;
+        }
+      }
+    }
+  }
 }
 
 .swiper-pagination-bullet {

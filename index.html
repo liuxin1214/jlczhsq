@@ -90,7 +90,7 @@
     <div class="middleboxfasortgoods" style="position:relative;width: 100%;margin: 0rem auto;padding:0 0.5625rem 1rem;box-sizing: border-box;" v-if="goodsFloorList&&goodsFloorList.length>0">
         <div v-for="(index,item) in goodsFloorList" style="break-inside: avoid;margin-top: 0.8rem;">
             <div class="middleboxfasortgoodsitem"  style="background: #fff;border-radius: 0.5rem;">
-                <div class="goodsiboca collecttion_btn" style="padding:0.5625rem;box-sizing: border-box;overflow: auto;" v-on:click="goGoodsPage(item)">
+                <div class="goodsiboca collecttion_btn" style="padding:0.5625rem;box-sizing: border-box;overflow: auto;">
                     <div class="middleboxfasortgoodsitemimg" style="width: 100%;position: relative">
                     </div>
                     <div style="display: flex;justify-content:space-between;align-items:center">
@@ -132,22 +132,15 @@
             </div>
         </div>
     </div>
-    <footer id="footer" style="height: 3.75rem;">
+    <footer id="footer" style="min-height: 3rem;">
         <div class="foot-box">
-            <div style="height: 100%" class="menu-item-list">
-                <a style="justify-content: center;   align-items: center;   display: flex;" class="memu-item focus"  href="./index.html">
-                    <div class="" style="text-align: center; margin: 0 auto;">
-                        <img role="button" aria-label="菜单首页" src="https://qy.chinaunicom.cn/ImageServer/image/66b5daa4b3b45d1f70d1108d" style=" width: 50%;">
-                        <div role="button" aria-label="菜单首页" style="font-size: 11px;margin-top: 1px;color: #E85450">首页</div>
-                    </div>
-                </a>
-
-                <a style="justify-content: center;   align-items: center;   display: flex;" class="memu-item" href="./my.html">
-                    <div class="" style="text-align: center; margin: 0 auto;">
-                        <img role="button" aria-label="菜单我的" src="https://qy.chinaunicom.cn/ImageServer/image/66b5dc23b3b45d1f70d1108e" style=" width: 50%;">
-                        <div role="button" aria-label="菜单我的" style="font-size: 11px;color: #B3B3B3;margin-top: 1px;">我的</div>
-                    </div>
-                </a>
+            <img width="100%" src="./images/jlczhsq/onefooter.jpg" alt="">
+            <img style="position:absolute;bottom:2rem;left: 9.5rem;width: 4rem;border-radius: 50%;" src="./images/jlczhsq/saomiao.png" alt="">
+            <div style="height: 100%;width: 100%;" class="menu-item-list">
+                <a class="memu-item" href="./index.html"></a>
+                <a class="memu-item" href="javascript:;"></a>
+                <a class="memu-item" href="javascript:;"></a>
+                <a class="memu-item" href="./my.html"></a>
             </div>
         </div>
     </footer>
