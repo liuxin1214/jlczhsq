@@ -1,4 +1,3 @@
-// import Swiper from "../js/swiper.min";
 let rootVM;
 
 rootVM = new Vue({
@@ -295,30 +294,17 @@ rootVM = new Vue({
             let mySwiper5 = new Swiper('.swiper-container', {
 
                 speed: 1000,
-                autoplay: 3200,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
                 loopFillGroupWithBlank: true,
                 disableOnInteraction: false,
                 autoplayDisableOnInteraction: false,
                 loop: true,
-                pagination: '.swiper-pagination',
-                onSlideChangeStart: function (e) {
-                    that.bannerIndex = e.realIndex
-                },
-                onSlideChangeEnd: function (e) {
-                    that.bannerIndex = e.realIndex
-                },
-            });
-        },
-        goodsadswiper(item, e) {
-            let that = this;
-            let mySwiper5 = new Swiper('.swiper-containerad', {
-
-                speed: 1000,
-                autoplay: 3200,
-                loopFillGroupWithBlank: true,
-                disableOnInteraction: false,
-                autoplayDisableOnInteraction: false,
-                loop: true,
+                pagination: {
+                    el: '.swiper-pagination'
+                  },
                 onSlideChangeStart: function (e) {
                     that.bannerIndex = e.realIndex
                 },
@@ -333,12 +319,8 @@ rootVM = new Vue({
     },
     ready: function ready() {
         this.topbannerswiper()
-        this.goodsadswiper();
     }
 });
-
-
-// 是否登录
 
 function adapter(){
     let w = document.documentElement.clientWidth;

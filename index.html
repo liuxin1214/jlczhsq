@@ -19,7 +19,11 @@
         align-items: center;
         margin:0 0.75rem;;
     }
-
+    a {
+        -webkit-tap-highlight-color: rgba(0,0,0,0); /* 完全透明 */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+    }
 </style>
 
 <body style="background-color: #f8f8f8;padding-bottom: 4.5rem;" v-cloak>
@@ -125,36 +129,6 @@
                         <img style="width: 14px;margin-right: 2px;" src="./images/jlczhsq/star.jpg" alt="">
                     </div>
                 </div>
-                <div class="goodsiboca" v-if="item.advertising==1" style="height:7.5rem;break-inside: avoid;overflow: auto;box-sizing: border-box;" >
-                    <div class="middleboxfasortgoodsitemimg swiper-containerad" style="width: 100%;position: relative">
-                        <div class="middleboxfasortgoodsitemimgtwo swiper-wrapper" style="width:100%;" >
-                            <div class="swiper-slide middleboxfasortgoodsitemimgtwo-topfa collecttion_btn" v-for="(kindex,aditem) in item.advisterlist" :kindex="kindex" >
-                                <template v-if="!aditem.isNull">
-                                    <div class="middleboxfasortgoodsitemimgtwo-top" style="position:relative;width: 100%;height:4.5rem;background: #fdf6ea;text-align: center">
-                                        <div style="width: 100%;position: absolute;bottom: 0;">
-                                            <img :src="aditem.goodsImg" alt="" style="width: 4.5rem;">
-                                        </div>
-                                    </div>
-                                    <div class="middleboxfasortgoodsitemimgtwobottom" style="padding:0 0.6rem;line-height:2.75rem;width: 100%;height:2.75rem;display: flex;color:#333;">
-                                        <div class="middleboxfasortgoodsitemimgtwo-l" style="font-size:0.875rem;">
-                                            {{aditem.rightName}}
-                                        </div>
-                                        <div class="middleboxfasortgoodsitemimgtwo-r"  style="display: flex;justify-content: center;align-items: center;">
-                                            <div style="margin-left:0.5rem;border-radius:1rem;line-height:1rem;font-size:0.75rem;text-align:center;color:#fff;width:3.625rem;height:1rem;background: linear-gradient(90deg, #EE2440 0%, #FF6565 100%);">
-                                                <div class="fonafa" style="width: 100%;height:100%;transform: scale(0.8);transform-origin: 0.3 0.3" >
-                                                    立即领取
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </template>
-                                <template v-if="aditem.isNull">
-                                    <img :src="aditem.goodsImg" alt="" style="width:100%;">
-                                </template>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -181,7 +155,8 @@
 
 <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
 <script type='text/javascript' src="./js/swiper-5.4.5.min.js"> </script>
-<script type='text/javascript' src="./js/index.js?v=a20220801"></script>
+<script type='text/javascript' src="./js/index.js"></script>
+
 
 </body>
 

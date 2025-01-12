@@ -4,7 +4,6 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
 <title>京联充电</title>
-<link rel="stylesheet" href="${cssRoot}/swiper.min.css">
 <style>
 
 footer{
@@ -110,11 +109,22 @@ footer{
   list-style: none;
   font-family: PingFangSC-Regular, sans-serif;
 }
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* 完全透明 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
 </style>
 
 <body style="background-color: #f8f8f8;padding-bottom: 4.5rem;" v-cloak>
     <div>
+      <div class="phone">
+        
+      </div>
+    </div>
+    <div>
         <img style="width:100%" src="./images/jlczhsq/my.png" alt="">
+        <a href="./index.html" style="width:100%;position:absolute;top:31.6rem;right: 1.4rem;display: flex;width: 4rem;height: 4rem;"></a>
     </div>
     <footer id="footer" style="height: 3.75rem;">
         <div class="foot-box">
@@ -139,3 +149,15 @@ footer{
 </body>
 
 </html>
+
+<script>
+  function adapter(){
+    let w = document.documentElement.clientWidth;
+    if (w > 640) {
+        w = 640;
+    }
+    document.documentElement.style.fontSize = w/750*32+"px";
+  }
+  adapter();
+  window.onresize = adapter;
+</script>
