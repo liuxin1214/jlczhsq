@@ -125,6 +125,9 @@ rootVM = new Vue({
             * 3请求接口 提示用户 返回到上一页
             */
             console.log(this.cellResult)
+        },
+        routerBack() {
+            window.history.back();
         }
     },
 });
