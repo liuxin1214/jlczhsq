@@ -35,17 +35,28 @@
         white-space: nowrap;
     }
 
-    .back-bar {
+    .back-bar{
         width: 100%;
         background: #FFFFFF;
-        padding: 6px 0;
+        padding: 6px 0px;
+        position: relative;
+        .title{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+        .van-icon{
+            position: relative;
+            left: 6px;
+        }
     }
 </style>
 
 <body>
     <div id="balance" v-cloak>
         <div class="back-bar">
-            <van-icon name="arrow-left" @click="routerBack" size="24"></van-icon>
+            <div class="title">余额提现</div>
+            <van-icon name="arrow-left" @click="routerBack" size="24" ></van-icon>
         </div>
         <div class="user-view">
             <div class="balance-title">请选择到账方式</div>

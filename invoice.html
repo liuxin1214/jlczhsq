@@ -71,14 +71,25 @@
     .back-bar{
         width: 100%;
         background: #FFFFFF;
-        padding: 6px 0;
+        padding: 6px 0px;
+        position: relative;
+        .title{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+        .van-icon{
+            position: relative;
+            left: 6px;
+        }
     }
 </style>
 
 <body>
     <div id="invoice" v-cloak>
         <div class="back-bar">
-            <van-icon name="arrow-left" @click="routerBack" size="24"></van-icon>
+            <div class="title">手动开票</div>
+            <van-icon name="arrow-left" @click="routerBack" size="24" ></van-icon>
         </div>
         <div class="user-view">
             <div class="invoice-card">

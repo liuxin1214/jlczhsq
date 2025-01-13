@@ -45,26 +45,40 @@
     .history-text{
         color: #ED7F4B;
     }
+    .history-item .van-cell{
+        color: #666
+    }
     .history-item .van-cell::after{
         border-bottom:none;
     }
     .back-bar{
         width: 100%;
         background: #FFFFFF;
-        padding: 6px 0;
+        padding: 6px 0px;
+        position: relative;
+        .title{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+        .van-icon{
+            position: relative;
+            left: 6px;
+        }
     }
 </style>
 
 <body>
     <div id="extracHhistory" v-cloak>
         <div class="back-bar">
+            <div class="title">提现记录</div>
             <van-icon name="arrow-left" @click="routerBack" size="24" ></van-icon>
         </div>
         <div class="user-view">
             <van-cell-group v-for="(item,index) in historyList" :key="index" class="history-item">
                 <div class="history-area-title">
                     <span style="font-size: 0.95rem;color: #444;">{{ `提现单号:${item.orderNo}` }}</span>
-                    <span class="history-text" >{{ statusConfig[item.status] }}</span>
+                    <span style="font-size: 0.95rem;" class="history-text" >{{ statusConfig[item.status] }}</span>
                 </div>
                 <van-cell title="提现金额" >
                     <span class="history-text" >{{item.money}}</span>
