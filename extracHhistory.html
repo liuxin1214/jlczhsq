@@ -63,7 +63,7 @@
         <div class="user-view">
             <van-cell-group v-for="(item,index) in historyList" :key="index" class="history-item">
                 <div class="history-area-title">
-                    <span >{{ `提现单号:${item.orderNo}` }}</span>
+                    <span style="font-size: 0.95rem;color: #444;">{{ `提现单号:${item.orderNo}` }}</span>
                     <span class="history-text" >{{ statusConfig[item.status] }}</span>
                 </div>
                 <van-cell title="提现金额" >
