@@ -69,7 +69,7 @@
 </style>
 
 <body>
-    <div id="extracHhistory" v-cloak>
+    <div class="root" id="extracHhistory" v-cloak>
         <div class="back-bar">
             <div class="title">提现记录</div>
             <van-icon name="arrow-left" @click="routerBack" size="24" ></van-icon>
@@ -108,107 +108,5 @@
 <!-- 引入vue资源 -->
 <script type='text/javascript' src="./js/vue.min.js"></script>
 <!-- 引入vant资源 -->
-<script src="https://unpkg.com/vue@2.6/dist/vue.min.js"></script>
 <script src="https://unpkg.com/vant@2.12/lib/vant.min.js"></script>
-
-<script>
-    let rootVM;
-
-    rootVM = new Vue({
-        el: '#extracHhistory',
-        data: {
-            statusConfig:{
-                "1":"已打款",
-                "2":"排队中",
-                "3":"已失效",
-            },
-            historyList:[
-                { 
-                    status:"1",
-                    orderNo:"TX2024121148971025",//提现单号
-                    money:"45193.55",///提现金额
-                    fee:"451.93",//    手续费
-                    name:"徐凤鸣",//   开户人
-                    cardNo:"6213360449904232879",//银行卡号
-                    bankName:"农业银行",//银行名称
-                    phone:"13004451425",//联系电话
-                    time:"2024-12-11 20:45:36"//提现时间
-                },
-                { 
-                    status:"1",
-                    orderNo:"TX2024111099100100",//提现单号
-                    money:"51095.82",///提现金额
-                    fee:"510.96",//    手续费
-                    name:"徐凤鸣",//   开户人
-                    cardNo:"6213360449904232879",//银行卡号
-                    bankName:"农业银行",//银行名称
-                    phone:"13004451425",//联系电话
-                    time:"2024-11-10 19:41:11"//提现时间
-                },
-                { 
-                    status:"1",
-                    orderNo:"TX2024101091207110",//提现单号
-                    money:"49872.36",///提现金额
-                    fee:"498.72",//    手续费
-                    name:"徐凤鸣",//   开户人
-                    cardNo:"6213360449904232879",//银行卡号
-                    bankName:"农业银行",//银行名称
-                    phone:"13004451425",//联系电话
-                    time:"2024-10-10 14:23:26"//提现时间
-                },
-                { 
-                    status:"1",
-                    orderNo:"TX202491011247711",//提现单号
-                    money:"43771.34",///提现金额
-                    fee:"437.71",//    手续费
-                    name:"徐凤鸣",//   开户人
-                    cardNo:"6213360449904232879",//银行卡号
-                    bankName:"农业银行",//银行名称
-                    phone:"13004451425",//联系电话
-                    time:"2024-9-10 16:51:43"//提现时间
-                },
-                { 
-                    status:"1",
-                    orderNo:"TX202481041464329",//提现单号
-                    money:"47513.49",///提现金额
-                    fee:"475.13",//    手续费
-                    name:"徐凤鸣",//   开户人
-                    cardNo:"6213360449904232879",//银行卡号
-                    bankName:"农业银行",//银行名称
-                    phone:"13004451425",//联系电话
-                    time:"2024-8-10 13:07:59"//提现时间
-                },
-                { 
-                    status:"1",
-                    orderNo:"TX202471071124421",//提现单号
-                    money:"45570.56",///提现金额
-                    fee:"455.71",//    手续费
-                    name:"徐凤鸣",//   开户人
-                    cardNo:"6213360449904232879",//银行卡号
-                    bankName:"农业银行",//银行名称
-                    phone:"13004451425",//联系电话
-                    time:"2024-7-10 13:47:26"//提现时间
-                },
-                { 
-                    status:"1",
-                    orderNo:"TX202461093418490",//提现单号
-                    money:"19179.63",///提现金额
-                    fee:"191.80",//    手续费
-                    name:"徐凤鸣",//   开户人
-                    cardNo:"6213360449904232879",//银行卡号
-                    bankName:"农业银行",//银行名称
-                    phone:"13004451425",//联系电话
-                    time:"2024-6-10 15:53:06"//提现时间
-                },
-
-            ]
-        },
-        methods:{
-            routerBack(){
-                window.history.back();
-            }
-        }
-    });
-
-
-</script>
+<script type='text/javascript' src="./js/interior/index.js"></script>

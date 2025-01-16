@@ -1,4 +1,4 @@
-<html id="root">
+<html>
 <meta charset="UTF-8">
 <meta name=”Iphone-content” content=”375″ />
 <meta name="format-detection" content="telephone=no">
@@ -53,7 +53,7 @@
 </style>
 
 <body>
-    <div id="balance" v-cloak>
+    <div class="root" id="balance" >
         <div class="back-bar">
             <div class="title">余额提现</div>
             <van-icon name="arrow-left" @click="routerBack" size="24" ></van-icon>
@@ -100,48 +100,6 @@
 <!-- 引入vue资源 -->
 <script type='text/javascript' src="./js/vue.min.js"></script>
 <!-- 引入vant资源 -->
-<script src="https://unpkg.com/vue@2.6/dist/vue.min.js"></script>
 <script src="https://unpkg.com/vant@2.12/lib/vant.min.js"></script>
-
+<script type='text/javascript' src="./js/interior/index.js"></script>
 </html>
-
-<script>
-    let rootVM;
-
-rootVM = new Vue({
-    el: '#balance',
-    data: {
-        cellResult:"",//勾选结果
-        cellList:[//单元格内信息
-            { key:1,title:"提现到银行卡"},
-            { key:2,title:"提现到对公账户"},
-        ],
-        cellDetails:{
-            mobile:"13004451425",//手机号
-            name:"徐凤鸣",//持卡人姓名
-            cardNo:"6213360449904232879",//银行卡号
-            bankName:"农业银行",//开户银行
-            balance:"20579.27",//可提现金额
-            cash:"",//提现金额
-            fee:"1.00",//提现手续费
-            monthlyPass:"45",//流量月卡费
-        }
- 
-    },
-    methods: {
-        takeCash(){
-            /* 
-            * 1判断是否选择了提现方式
-            * 2判断是否填写了 合理的 提现金额
-            * 3请求接口 提示用户 返回到上一页
-            */
-            console.log(this.cellResult)
-        },
-        routerBack() {
-            window.history.back();
-        }
-    },
-});
-
-
-</script>

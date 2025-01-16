@@ -61,7 +61,7 @@
 </style>
 
 <body>
-  <div id="divideMoney" v-cloak>
+  <div class="root" id="divideMoney" v-cloak>
     <div class="back-bar">
       <div class="title">分账记录</div>
       <van-icon name="arrow-left" @click="routerBack" size="24" ></van-icon>
@@ -94,68 +94,5 @@
 <!-- 引入vant资源 -->
 <script src="https://unpkg.com/vue@2.6/dist/vue.min.js"></script>
 <script src="https://unpkg.com/vant@2.12/lib/vant.min.js"></script>
-
+<script type='text/javascript' src="./js/interior/index.js"></script>
 </html>
-
-<script>
-  let rootVM;
-
-  rootVM = new Vue({
-    el: '#divideMoney',
-    data: {
-      divideMoneyList: [
-        {
-          target: "2430.38",//参与分账金额
-          percent: "65.00",//分账百分比
-          receive: "1579.75",//获得分账
-          time: "2025-01-12 00:51:33",//时间
-        },
-        {
-          target: "2380.71",//参与分账金额
-          percent: "65.00",//分账百分比
-          receive: "1547.46",//获得分账
-          time: "2025-01-11 00:17:41",//时间
-        },
-        {
-          target: "2401.49",//参与分账金额
-          percent: "65.00",//分账百分比
-          receive: "1560.97",//获得分账
-          time: "2025-01-10 00:09:37",//时间
-        },
-        {
-          target: "2411.39",//参与分账金额
-          percent: "65.00",//分账百分比
-          receive: "1567.40",//获得分账
-          time: "2025-01-09 00:36:27",//时间
-        },
-        {
-          target: "2402.46",//参与分账金额
-          percent: "65.00",//分账百分比
-          receive: "1561.60",//获得分账
-          time: "2025-01-08 00:16:51",//时间
-        },
-        {
-          target: "2397.37",//参与分账金额
-          percent: "65.00",//分账百分比
-          receive: "1558.29",//获得分账
-          time: "2025-01-07 00:47:03",//时间
-        },
-        {
-          target: "2467.09",//参与分账金额
-          percent: "65.00",//分账百分比
-          receive: "1603.61",//获得分账
-          time: "2025-01-06 00:41:09",//时间
-        },
-
-      ],
-
-    },
-    methods: {
-      routerBack() {
-        window.history.back();
-      }
-    }
-  });
-
-
-</script>

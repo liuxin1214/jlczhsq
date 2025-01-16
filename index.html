@@ -80,123 +80,126 @@
     }
 </style>
 
-<body style="background-color: #f8f8f8;padding-bottom: 4.5rem;" v-cloak>
-    <div class="search">
-        <img style="width: 100%;border-radius: 100px;overflow: hidden;" src="./images/jlczhsq/hat.jpg" alt="">
-    </div>
-    <div class="younger-home" style="width:100%;height:14.5rem;position: relative;padding-top: 0rem;background-color: #fff;">
-        <div class="bgimg" style="width: 100%;height:12rem;position: absolute;top:0;left:0;z-index:2;overflow: hidden;">
-            <img src="./images/jlczhsq/home-bg.png" alt="" style="width: 100%;position:absolute;top:-5rem;left:0;">
-            <img src="./images/jlczhsq/home-bg.png" alt="" style="width: 100%;position:absolute;top:-5rem;left:0;">
-            <img src="./images/jlczhsq/home-bg.png" alt="" style="width: 100%;position:absolute;top:-5rem;left:0;">
+<body style="background-color: #f8f8f8;padding-bottom: 4.5rem;" >
+    <div class="root" v-cloak>
+        <div class="search">
+            <img style="width: 100%;border-radius: 100px;overflow: hidden;" src="./images/jlczhsq/hat.jpg" alt="">
         </div>
-        <div class="topboxbg" style="width:100%;position:relative;z-index:4;">
-            <div class="topboxbgbox" style="z-index:4;position: absolute;top:0.4rem;left:0;width: 100%;box-sizing:border-box;height:5.8125rem;padding:0 0.5625rem;">
-                <div style="width:100%;padding:0 0.75rem;position: absolute;top:3.1125rem;left:0;box-sizing:border-box;">
-                    <div class="topiconboxbanner">
-                        <div class="swiper-container" style="width:100%;height:10rem;">
-                            <div  class="swiper-wrapper" style="width: 100%;" v-if="bannerList&&bannerList.length>0">
-                                <div  v-for="(index, item) in bannerList" :kattr="item.img" style="width: 100%;" class="swiper-slide">
-                                    <div class="middleadvertisbox" :kindex="index" style="width: 100%;border-radius: 0.3rem;overflow: hidden">
-                                        <img class="middleadvertisesimg" :src="item.logo" alt="" style="width: 100%;height: 100%;">
+        <div class="younger-home" style="width:100%;height:14.5rem;position: relative;padding-top: 0rem;background-color: #fff;">
+            <div class="bgimg" style="width: 100%;height:12rem;position: absolute;top:0;left:0;z-index:2;overflow: hidden;">
+                <img src="./images/jlczhsq/home-bg.png" alt="" style="width: 100%;position:absolute;top:-5rem;left:0;">
+                <img src="./images/jlczhsq/home-bg.png" alt="" style="width: 100%;position:absolute;top:-5rem;left:0;">
+                <img src="./images/jlczhsq/home-bg.png" alt="" style="width: 100%;position:absolute;top:-5rem;left:0;">
+            </div>
+            <div class="topboxbg" style="width:100%;position:relative;z-index:4;">
+                <div class="topboxbgbox" style="z-index:4;position: absolute;top:0.4rem;left:0;width: 100%;box-sizing:border-box;height:5.8125rem;padding:0 0.5625rem;">
+                    <div style="width:100%;padding:0 0.75rem;position: absolute;top:3.1125rem;left:0;box-sizing:border-box;">
+                        <div class="topiconboxbanner">
+                            <div class="swiper-container" style="width:100%;height:10rem;">
+                                <div  class="swiper-wrapper" style="width: 100%;" v-if="bannerList&&bannerList.length>0">
+                                    <div  v-for="(item,index) in bannerList" :kattr="item.img" style="width: 100%;" class="swiper-slide">
+                                        <div class="middleadvertisbox" :kindex="index" style="width: 100%;border-radius: 0.3rem;overflow: hidden">
+                                            <img class="middleadvertisesimg" :src="item.logo" alt="" style="width: 100%;height: 100%;">
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- 如果需要分页器 -->
+                                <div class="swiper-pagination" style="bottom: auto; margin-top: -1rem;"></div>
                             </div>
-                            <!-- 如果需要分页器 -->
-                            <div class="swiper-pagination" style="bottom: auto; margin-top: -1rem;"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="middleboxfa" style="width:100%;height: 9.9rem;padding: 0rem 0rem 0;box-sizing: border-box;position: relative;z-index: 2;background-color: #fff;">
-        <div class="middleboxfabg" style="box-sizing:border-box;width:100%;opacity: 1;">
-            <div class="middleboxfabgbottom" style="width:100%;display: flex;justify-content:space-between;">
-                <template v-for="(index,item) in hotactList">
-                    <div style="width:25%;height:4.6rem;display: flex;align-items: center;flex-direction: column;"  @click="gotohotactitem(index)">
-                        <img :src="item.img" alt="" style="width:50%;">
-                        <p style="color:#333;font-size: 0.75rem;margin-top: 0.25rem;">{{item.text}}</p>
-                    </div>
-                </template>
+        <div class="middleboxfa" style="width:100%;height: 9.9rem;padding: 0rem 0rem 0;box-sizing: border-box;position: relative;z-index: 2;background-color: #fff;">
+            <div class="middleboxfabg" style="box-sizing:border-box;width:100%;opacity: 1;">
+                <div class="middleboxfabgbottom" style="width:100%;display: flex;justify-content:space-between;">
+                    <template v-for="(item,index) in hotactList">
+                        <div style="width:25%;height:4.6rem;display: flex;align-items: center;flex-direction: column;"  @click="gotohotactitem(index)">
+                            <img :src="item.img" alt="" style="width:50%;">
+                            <p style="color:#333;font-size: 0.75rem;margin-top: 0.25rem;">{{item.text}}</p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <img width="100%" src="./images/jlczhsq/times.jpg" alt="">
+        </div>
+        <div class="middleboxfatype" style="font-size:0.8rem;display:flex;width:100%;padding:0rem 0rem 0 0rem;height:1.75rem;position: relative;z-index: 2;background-color: #fff;  ">
+            <div    class="middleboxfatypeitem" style="position:relative;width:25%;text-align: center;line-height: 1.75rem;color:#333;display: flex;align-items: center;justify-content: center;" v-for="(item,index) in typeList">
+                <div class="middleboxfatypeitemname" v-text="item.catName"></div>
+                <div class="uprowbox"></div>
             </div>
         </div>
-        <img width="100%" src="./images/jlczhsq/times.jpg" alt="">
-    </div>
-    <div class="middleboxfatype" style="font-size:0.8rem;display:flex;width:100%;padding:0rem 0rem 0 0rem;height:1.75rem;position: relative;z-index: 2;background-color: #fff;  ">
-        <div    class="middleboxfatypeitem" style="position:relative;width:25%;text-align: center;line-height: 1.75rem;color:#333;display: flex;align-items: center;justify-content: center;" v-for="(index,item) in typeList">
-            <div class="middleboxfatypeitemname" v-text="item.catName"></div>
-            <div class="uprowbox"></div>
+        <div style="width: 100%;position: relative;background-color: #fff;padding: 0.25rem 0;">
+            <div style="position:relative;padding-left:0.75rem;top:0;height: 1.8rem;box-sizing: border-box;">
+                <div class="middleboxfatypechild" style="width:100%;display: flex;">
+                    <template v-if="sectypeList&&sectypeList.length>0">
+                        <div :class="sectypeListIndex==index?'middleboxfatypechilditem middleboxfatypechilditembold':'middleboxfatypechilditem'" v-for="(item,index) in sectypeList" style="padding:0 0.5625rem;background:#f6f6f6;height:1.41rem;color: #333;box-sizing: border-box;border-radius: 0.3rem;font-size: 0.75rem;line-height: 1.41rem;text-align: center;margin-right: 0.5625rem;" v-text="item.catName">
+    
+                        </div>
+                    </template>
+                </div>
+            </div>
         </div>
+        <div class="middleboxfasortgoods" style="position:relative;width: 100%;margin: 0rem auto;padding:0 0.5625rem 1rem;box-sizing: border-box;" v-if="goodsFloorList&&goodsFloorList.length>0">
+            <div v-for="(item,index) in goodsFloorList" style="break-inside: avoid;margin-top: 0.8rem;">
+                <div class="middleboxfasortgoodsitem"  style="background: #fff;border-radius: 0.5rem;">
+                    <div class="goodsiboca collecttion_btn" style="padding:0.5625rem;box-sizing: border-box;overflow: auto;">
+                        <div class="middleboxfasortgoodsitemimg" style="width: 100%;position: relative">
+                        </div>
+                        <div style="display: flex;justify-content:space-between;align-items:center">
+                            <div v-text="item.station_name" style="height:2.4375rem;font-weight: bold;font-size:1rem;color:#000;line-height:2.4375rem;width: 55%;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"></div>
+                            <div style="display: flex;align-items:center;font-size: 0.75rem;">
+                                <img style="width: 0.65rem;margin-right: 0.1rem;" src="./images/jlczhsq/tip.jpg" alt="">
+                                <p>{{item.distance ? item.distance + 'km' : '1km' }}</p>
+                            </div>
+                        </div>
+                        <p style="width: 75%;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;color: #666;font-size: 0.75rem;">{{item.station_address}}</p>
+                        <div>
+                            <div class="middleboxfasortgoodsitemprice" style="display: flex;position:relative;height:1.5rem;margin-top: 0.25rem;">
+                                <div class="new_goods_money"><span>¥</span> <span>{{item.price}}</span><span>元/度</span></div>
+                            </div>
+                        </div>
+                        <div style="display: flex;justify-content:space-between;align-items:center;height: 3rem;">
+                            <div style="display: flex;justify-content:space-between;align-items:center">
+                                <div style="height: 1rem;width: 1rem;background: #548EF1;border-radius: 0.25rem;display: flex;justify-content:center;align-items:center;font-weight: bold;font-size: 0.75rem;
+                                line-height: 1.2rem;color: #fff;margin-right: 0.25rem;">P</div>
+                                <div style="color: #aaa;font-size: 0.75rem;">{{item.park_fee_type == '0' ? '停车收费' : '限时免费'}}</div>
+                            </div>
+                            <div style="display: flex;justify-content:space-between;align-items:center">
+                                <div style="height: 1rem;width: 1rem;background: #FDF3EB;border-radius: 0.25rem;display: flex;justify-content:center;align-items:center;font-size: 0.75rem;
+                                line-height: 1rem;color: #fff;margin-right: 0.25rem;border: 1px solid #F09955;color: #F09955;">
+                                {{item.terminals[0].name}}
+                                </div>
+                                <div style="font-size: 0.8rem;">
+                                    <span style="font-weight: bold;font-size: 0.85rem;">{{item.terminals[0].can_loop_num}}</span>闲
+                                    <span style="font-size: 0.75rem;">/{{item.terminals[0].all_loop_num}}共</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex;align-items:center;flex-direction: row-reverse;">
+                            <img style="width: 14px;margin-right: 2px;" src="./images/jlczhsq/star.jpg" alt="">
+                            <img style="width: 14px;margin-right: 2px;" src="./images/jlczhsq/star.jpg" alt="">
+                            <img style="width: 14px;margin-right: 2px;" src="./images/jlczhsq/star.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="footer" style="min-height: 3rem;">
+            <div class="foot-box">
+                <img width="100%" src="./images/jlczhsq/onefooter.jpg" alt="">
+                <img style="position:absolute;top: -1.5rem;left: 9.5rem;width: 4rem;border-radius: 50%;" src="./images/jlczhsq/saomiao.png" alt="">
+                <div style="height: 100%;width: 100%;" class="menu-item-list">
+                    <a class="memu-item" href="./index.html"></a>
+                    <a class="memu-item" href="javascript:;"></a>
+                    <a class="memu-item" href="javascript:;"></a>
+                    <a class="memu-item" href="./my.html"></a>
+                </div>
+            </div>
+        </footer>
     </div>
-    <div style="width: 100%;position: relative;background-color: #fff;padding: 0.25rem 0;">
-        <div style="position:relative;padding-left:0.75rem;top:0;height: 1.8rem;box-sizing: border-box;">
-            <div class="middleboxfatypechild" style="width:100%;display: flex;">
-                <template v-if="sectypeList&&sectypeList.length>0">
-                    <div :class="sectypeListIndex==index?'middleboxfatypechilditem middleboxfatypechilditembold':'middleboxfatypechilditem'" v-for="(index,item) in sectypeList" style="padding:0 0.5625rem;background:#f6f6f6;height:1.41rem;color: #333;box-sizing: border-box;border-radius: 0.3rem;font-size: 0.75rem;line-height: 1.41rem;text-align: center;margin-right: 0.5625rem;" v-text="item.catName">
 
-                    </div>
-                </template>
-            </div>
-        </div>
-    </div>
-    <div class="middleboxfasortgoods" style="position:relative;width: 100%;margin: 0rem auto;padding:0 0.5625rem 1rem;box-sizing: border-box;" v-if="goodsFloorList&&goodsFloorList.length>0">
-        <div v-for="(index,item) in goodsFloorList" style="break-inside: avoid;margin-top: 0.8rem;">
-            <div class="middleboxfasortgoodsitem"  style="background: #fff;border-radius: 0.5rem;">
-                <div class="goodsiboca collecttion_btn" style="padding:0.5625rem;box-sizing: border-box;overflow: auto;">
-                    <div class="middleboxfasortgoodsitemimg" style="width: 100%;position: relative">
-                    </div>
-                    <div style="display: flex;justify-content:space-between;align-items:center">
-                        <div v-text="item.station_name" style="height:2.4375rem;font-weight: bold;font-size:1rem;color:#000;line-height:2.4375rem;width: 55%;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"></div>
-                        <div style="display: flex;align-items:center;font-size: 0.75rem;">
-                            <img style="width: 0.65rem;margin-right: 0.1rem;" src="./images/jlczhsq/tip.jpg" alt="">
-                            <p>{{item.distance ? item.distance + 'km' : '1km' }}</p>
-                        </div>
-                    </div>
-                    <p style="width: 75%;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;color: #666;font-size: 0.75rem;">{{item.station_address}}</p>
-                    <div>
-                        <div class="middleboxfasortgoodsitemprice" style="display: flex;position:relative;height:1.5rem;margin-top: 0.25rem;">
-                            <div class="new_goods_money"><span>¥</span> <span>{{item.price}}</span><span>元/度</span></div>
-                        </div>
-                    </div>
-                    <div style="display: flex;justify-content:space-between;align-items:center;height: 3rem;">
-                        <div style="display: flex;justify-content:space-between;align-items:center">
-                            <div style="height: 1rem;width: 1rem;background: #548EF1;border-radius: 0.25rem;display: flex;justify-content:center;align-items:center;font-weight: bold;font-size: 0.75rem;
-                            line-height: 1.2rem;color: #fff;margin-right: 0.25rem;">P</div>
-                            <div style="color: #aaa;font-size: 0.75rem;">{{item.park_fee_type == '0' ? '停车收费' : '限时免费'}}</div>
-                        </div>
-                        <div style="display: flex;justify-content:space-between;align-items:center">
-                            <div style="height: 1rem;width: 1rem;background: #FDF3EB;border-radius: 0.25rem;display: flex;justify-content:center;align-items:center;font-size: 0.75rem;
-                            line-height: 1rem;color: #fff;margin-right: 0.25rem;border: 1px solid #F09955;color: #F09955;">
-                            {{item.terminals[0].name}}
-                            </div>
-                            <div style="font-size: 0.8rem;">
-                                <span style="font-weight: bold;font-size: 0.85rem;">{{item.terminals[0].can_loop_num}}</span>闲
-                                <span style="font-size: 0.75rem;">/{{item.terminals[0].all_loop_num}}共</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="display: flex;align-items:center;flex-direction: row-reverse;">
-                        <img style="width: 14px;margin-right: 2px;" src="./images/jlczhsq/star.jpg" alt="">
-                        <img style="width: 14px;margin-right: 2px;" src="./images/jlczhsq/star.jpg" alt="">
-                        <img style="width: 14px;margin-right: 2px;" src="./images/jlczhsq/star.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer id="footer" style="min-height: 3rem;">
-        <div class="foot-box">
-            <img width="100%" src="./images/jlczhsq/onefooter.jpg" alt="">
-            <img style="position:absolute;top: -1.5rem;left: 9.5rem;width: 4rem;border-radius: 50%;" src="./images/jlczhsq/saomiao.png" alt="">
-            <div style="height: 100%;width: 100%;" class="menu-item-list">
-                <a class="memu-item" href="./index.html"></a>
-                <a class="memu-item" href="javascript:;"></a>
-                <a class="memu-item" href="javascript:;"></a>
-                <a class="memu-item" href="./my.html"></a>
-            </div>
-        </div>
-    </footer>
 
 <script type='text/javascript' src="./js/vue.min.js"></script>
 <script type='text/javascript' src="./js/swiper-5.4.5.min.js"> </script>

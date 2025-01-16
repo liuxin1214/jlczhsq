@@ -138,46 +138,49 @@ a {
             height: 3.5rem;
             >p:nth-child(1){
                 color: #EEFEA8;
+                min-height: 1rem;
             }
         }
     }
 }
 </style>
 
-<body style="background: url('../images/jlczhsq/station-1.png') no-repeat;background-size: contain;padding-bottom: 4.5rem;padding-top: 6rem;" v-cloak>
-    <div class="hat">
-        汽车
-    </div>
-    <div class="content">
-        <div>
-            <p>汽车统计</p>
-            <div class="data-content">
-                <div class="data-child" v-for="(index,item) in Newdata.car">
-                    <p v-if="index==0 || index==1"><span style="font-size: 0.5rem;">￥</span>{{item.Number}}</p>
-                    <p v-else>{{item.Number}}</p>
-                    <p>{{item.text}}</p>
+<body style="background: url('../images/jlczhsq/station-1.png') no-repeat;background-size: contain;padding-bottom: 4.5rem;padding-top: 6rem;" >
+    <div class="root" v-cloak>
+        <div class="hat">
+            汽车
+        </div>
+        <div class="content">
+            <div>
+                <p>汽车统计</p>
+                <div class="data-content">
+                    <div class="data-child" v-for="(item,index) in car">
+                        <p v-if="index==0 || index==1"><span style="font-size: 0.5rem;">￥</span>{{item.Number}}</p>
+                        <p v-else>{{item.Number}}</p>
+                        <p>{{item.text}}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="check">
-        <img src="../images/jlczhsq/carshow.jpg" alt="">
-        <div>
-            <div v-for="item in 4"></div>
-        </div>
-        
-    </div>
-    <footer id="footer" style="min-height: 3rem;">
-        <div class="foot-box">
-            <img width="100%" src="../images/jlczhsq/4footer.jpg" alt="">
-            <div style="height: 100%;width: 100%;" class="menu-item-list">
-                <a class="memu-item" href="./index.html"></a>
-                <a class="memu-item" href="./car.html"></a>
-                <a class="memu-item" href="./order.html"></a>
-                <a class="memu-item" href="./my.html"></a>
+        <div class="check">
+            <img src="../images/jlczhsq/carshow.jpg" alt="">
+            <div>
+                <div v-for="item in 4"></div>
             </div>
+            
         </div>
-    </footer>
+        <footer id="footer" style="min-height: 3rem;">
+            <div class="foot-box">
+                <img width="100%" src="../images/jlczhsq/4footer.jpg" alt="">
+                <div style="height: 100%;width: 100%;" class="menu-item-list">
+                    <a class="memu-item" href="./index.html"></a>
+                    <a class="memu-item" href="./car.html"></a>
+                    <a class="memu-item" href="./order.html"></a>
+                    <a class="memu-item" href="./my.html"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
